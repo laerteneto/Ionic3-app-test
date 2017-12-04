@@ -17,20 +17,20 @@
 
   <h1>Nome do Usuário</h1>
 
-  <ion-card>
+  <ion-card *ngFor="let movie of movie_list">
 
     <ion-item>
       <ion-avatar item-start>
         <img src="assets/imgs/avatar.png">
       </ion-avatar>
-      <h2 class="feed_title">{{ object_feed.title }}</h2>
-      <p class="feed_date">{{object_feed.date}}</p>
+      <h2 class="feed_title">{{ movie.original_title}}</h2>
+      <p class="feed_date">{{movie.release_date}}</p>
     </ion-item>
 
-    <img src="assets/imgs/feed.png">
+    <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.backdrop_path">
 
     <ion-card-content>
-      <p>{{object_feed.description}}</p>
+      <p>{{movie.overviwe}}</p>
     </ion-card-content>
 
     <ion-row>
