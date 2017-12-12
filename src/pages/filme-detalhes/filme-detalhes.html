@@ -15,20 +15,25 @@
 
 <ion-content padding>
   <ion-card *ngIf="movie">
-    
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="assets/imgs/avatar.png">
-          </ion-avatar>
-          <h2 class="feed_title">{{ movie.original_title}}</h2>
-          <p class="feed_date">{{movie.release_date}}</p>
-        </ion-item>
-    
-        <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.backdrop_path">
-    
-        <ion-card-content>
-          <p>{{movie.overview}}</p>
-        </ion-card-content>
-      
-      </ion-card>
-</ion-content>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/avatar.png">
+      </ion-avatar>
+      <h2 class="feed_title">{{ movie.original_title}}</h2>
+      <p class="feed_date">{{movie.release_date}}</p>
+    </ion-item>
+
+    <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.backdrop_path">
+
+    <ion-card-content>
+      <p>{{movie.overview}}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+
+  <ion-content padding>
+    <img *ngIf="img" [src]="img" alt="">
+    <button ion-button block (click)="tirarFoto()">Tirar Foto</button>
+  </ion-content>
