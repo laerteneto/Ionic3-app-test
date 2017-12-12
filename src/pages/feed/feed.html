@@ -15,9 +15,9 @@
 
 <ion-content padding>
 
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
 
   <h1>Nome do Usuário</h1>
@@ -35,7 +35,7 @@
     <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.backdrop_path">
 
     <ion-card-content>
-      <p>{{movie.overviwe}}</p>
+      <p>{{movie.overview}}</p>
     </ion-card-content>
 
     <ion-row>
@@ -58,6 +58,13 @@
       </ion-col>
     </ion-row>
 
+    <button ion-button block (click)="abrirDetalhes(movie)">Detalhes</button>
+
   </ion-card>
-  
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>
